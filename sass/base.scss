@@ -21,10 +21,7 @@ a{
 .clearfix::after{
   content:'';
   display: block;
-  line-height: 0;
-  height: 0;
   clear: both;
-  visibility: hidden;
 }
 .clearfix{
   // 移动端这里可以省略
