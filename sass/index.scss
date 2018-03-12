@@ -1,3 +1,10 @@
+/*
+ * @Author: zc 
+ * @Date: 2018-03-12 08:57:50 
+ * @Last Modified by: zc
+ * @Last Modified time: 2018-03-12 17:37:38
+ */
+
 // 引入 normalize
 @import 'normalize.scss';
 // 引入 swiper的 scss
@@ -5,7 +12,8 @@
 // 引入 base
 @import 'base.scss';
 // 设置 高度 100%
-html, body {
+html,
+body {
   height: 100%;
   overflow: hidden;
 }
@@ -22,9 +30,9 @@ html, body {
 @mixin bgc ($url, $width) {
   background: url($url) no-repeat center /100% 100%;
   position: absolute;
-    left: 50%; // 这里 使用margin-left来实现 左右居中目的是 为了 后面动画中 我们要使用 transform来改变元素
-    margin-left: p2r(-$width/2);
-  }
+  left: 50%; // 这里 使用margin-left来实现 左右居中目的是 为了 后面动画中 我们要使用 transform来改变元素
+  margin-left: p2r(-$width/2);
+}
 
 // 直接设置背景图 不考虑居中
 // 传入 url即可
@@ -49,15 +57,13 @@ html, body {
   z-index: 2;
   background: #FFEBEA;
   .rider {
-    @include size(154,
-      121);
+    @include size(154, 121);
     @include bg('../img/loading/rider1_.png');
     top: p2r(233);
     right: p2r(108);
   }
   .progress {
-    @include size(416,
-      20);
+    @include size(416, 20);
     background-color: #FF2E46;
     border: 2px solid #452B2C;
     border-radius: p2r(20);
@@ -66,17 +72,17 @@ html, body {
     left: 50%;
     margin-left: p2r(-416/2);
   }
-  .info{
+  .info {
     @include size(220, 28);
-    @include bgc('../img/loading/loading-txt.png',220);
+    @include bgc('../img/loading/loading-txt.png', 220);
     top: p2r(414);
   }
-  .logo{
+  .logo {
     @include size(162, 39);
-    @include bgc('../img/loading/waimai-logo.png',162);
+    @include bgc('../img/loading/waimai-logo.png', 162);
     bottom: p2r(130);
   }
-  .copyright{
+  .copyright {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -85,25 +91,25 @@ html, body {
   }
 }
 
-
 /*
     为了可以走进度 进度条中 添加子元素
     */
-    .loading {
-      .progress {
-        background-color: transparent;
-        .step {
-          width: 30%;
-          height: 100%;
-          background-color: #FF2947;
-          right: 0;
-          position: absolute;
-        }
-      }
+
+.loading {
+  .progress {
+    background-color: transparent;
+    .step {
+      width: 30%;
+      height: 100%;
+      background-color: #FF2947;
+      right: 0;
+      position: absolute;
     }
+  }
+}
 
 // 触发动画
-.loading.animate{
+.loading.animate {
   .step {
     animation: steps .5s linear forwards;
   }
@@ -112,326 +118,242 @@ html, body {
   }
 }
 
-@keyframes steps {
-  to {
-    width: 100%;
-  }
-}
-
-// 熊开车动画
-@keyframes bearRide {
-  10% {
-    transform: translateX(p2r(-26*1)) translateY(p2r(-10));
-  }
-  20% {
-    transform: translateX(p2r(-26*2)) translateY(p2r(10));
-  }
-  30% {
-    transform: translateX(p2r(-26*3)) translateY(p2r(-10));
-  }
-  40% {
-    transform: translateX(p2r(-26*4)) translateY(p2r(10));
-  }
-  50% {
-    transform: translateX(p2r(-26*5)) translateY(p2r(-10));
-  }
-  60% {
-    transform: translateX(p2r(-26*6)) translateY(p2r(10));
-  }
-  70% {
-    transform: translateX(p2r(-26*7)) translateY(p2r(-10));
-  }
-  80% {
-    transform: translateX(p2r(-26*8)) translateY(p2r(10));
-  }
-  90% {
-    transform: translateX(p2r(-26*9)) translateY(p2r(-10));
-  }
-  100% {
-    transform: translateX(p2r(-26*10)) translateY(p2r(10));
-  }
-}
-
 //欢迎页面
-.welcome{
+.welcome {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   z-index: 1;
   background: deepskyblue;
-  .info{
+  .info {
     @include size(397, 224);
-    @include bgc('../img/page1/theme-title.png',397);
+    @include bgc('../img/page1/theme-title.png', 397);
     top: p2r(42);
-    .hello{
+    .hello {
       @include size(75, 70);
       @include bg('../img/page1/hello.png');
       top: p2r(20);
       right: p2r(8);
     }
   }
-  .cloud{
+  .cloud {
     @include size(640, 673);
     @include bg('../img/page1/clouds.png');
     bottom: p2r(0);
   }
-  .grass1{
+  .grass1 {
     @include size(640, 396);
     @include bg('../img/page1/grass1.png');
     left: 0;
     bottom: 0;
   }
-  .grass2{
+  .grass2 {
     @include size(640, 228);
     @include bg('../img/page1/grass2.png');
     right: 0;
     bottom: 0;
   }
-  .trees{
+  .trees {
     @include size(599, 71);
-    @include bgc('../img/page1/trees.png',599);
+    @include bgc('../img/page1/trees.png', 599);
     bottom: p2r(352);
     z-index: 1;
   }
-  .rotate-btn-box{
+  .rotate-btn-box {
     @include size(208, 208);
-    @include bgc('../img/page1/circle1.png',208);
+    @include bgc('../img/page1/circle1.png', 208);
     bottom: p2r(86);
-    .circle{
+    .circle {
       @include size(208, 208);
-      @include bgc('../img/page1/circle2.png',208);
+      @include bgc('../img/page1/circle2.png', 208);
     }
-    .btn{
+    .btn {
       @include size(124, 113);
-      @include bgc('../img/page1/bear-btn-pre.png',124);
+      @include bgc('../img/page1/bear-btn-pre.png', 124);
       top: p2r((208 - 113) / 2);
     }
   }
-  .bear-box{
+  .bear-box {
     position: absolute;
     @include size(167, 279);
     left: 50%;
     bottom: p2r(346);
     margin-left: p2r(-167/2);
     z-index: 2;
-    .bear{
+    .bear {
       width: 100%;
       height: 100%;
-      @include bgc('../img/page1/rider2.png',167);
+      @include bgc('../img/page1/rider2.png', 167);
     }
-    .smoke{
+    .smoke {
       @include size(114, 26);
-      @include bgc('../img/page1/jet1.png',114);
+      @include bgc('../img/page1/jet1.png', 114);
       bottom: 0;
     }
   }
 }
 
-.welcome{
-  .info{
+.welcome {
+  .info {
     opacity: 0;
   }
-  .hello{
+  .hello {
     opacity: 0;
   }
-  .grass1{
+  .grass1 {
     height: p2r(10);
   }
-  .grass2{
+  .grass2 {
     opacity: 0;
   }
-  .trees{
+  .trees {
     opacity: 0;
   }
-  .bear-box{
+  .bear-box {
     opacity: 0;
   }
-  .rotate-btn-box{
+  .rotate-btn-box {
     opacity: 0;
     transform: scale(0);
   }
-  .btn{
+  .btn {
     opacity: 0;
   }
-  .smoke{
+  .smoke {
     opacity: 0;
   }
 }
 
-.welcome.animate{
-  .grass1{
-    animation: grass1 .3s  forwards;
+.welcome.animate {
+  .grass1 {
+    animation: grass1 .3s forwards;
   }
-  .grass2{
+  .grass2 {
     animation: grass2 .4s .5s forwards;
   }
-  .trees{
-    animation: trees .5s 1s  forwards;
+  .trees {
+    animation: trees .5s 1s forwards;
   }
-  .rotate-btn-box{
-    animation: samllToBig .5s 1.5s  forwards;
+  .rotate-btn-box {
+    animation: smallToBig .5s 1.5s forwards;
   }
-  .circle{
+  .circle {
     animation: rotate 1s infinite linear;
   }
-  .btn{
-    animation: samllToBig .5s 1.8s forwards;
+  .btn {
+    animation: smallToBig .5s 1.8s forwards;
   }
-  .bear-box{
-    animation: upToDown .5s 2s  forwards;
+  .bear-box {
+    animation: upToDown .5s 2s forwards;
   }
-  .bear{
-    animation: upAndDown .5s 2.5s infinite;
+  .bear {
+    animation: upAndDown .5s infinite linear;
   }
-  .smoke{
-    animation: samllToBig .5s 2.5s infinite;
+  .smoke {
+    animation: smallToBig .5s .25s infinite;
   }
-  .info{
-    animation: upToDown .5s 2.5s  forwards;
+  .info {
+    animation: upToDown .5s 2.5s forwards;
   }
-  .hello{
-    animation: samllToBig .5s 3s forwards;
-  }
-}
-
-//草地动画
-@keyframes grass1{
-  to{
-    height: p2r(396);
+  .hello {
+    animation: smallToBig .5s 3s forwards;
   }
 }
-// 页面2 草2 动画 大-> 小
-@keyframes grass2{
-  from{
-    transform: scale(2,1);
-  }
-  to{
-    opacity: 1;
-        // 用自己 默认的 transform
-      }
-    }
-// 页面2 树动画
-@keyframes trees{
-  from{
-    transform: translateY(-200%);
-  }
-  80%{
-    transform: translateY(10%);
-    opacity:1;
-  }
-  90%{
-    transform: translateY(-10%);
-    opacity:1;
-  }
-  100%{
-    transform: none;
-    opacity:1;
-  }
-}
-@keyframes rotate {
-  form{
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes upAndDown {
-  from{
-    transform: translateY(-5%);
-  }
-  to{
-   transform: none;
- }
-}
-
-@keyframes upToDown {
-  from{
-    transform: translateY(-50%);
-  }
-  to{
-    opacity: 1;
-  }
-}
-
-@keyframes samllToBig {
-  from {
-    transform: scale(0,0);
-  }
-  to{
-    transform: none;
-    opacity: 1;
-  }
-}
-
 
 //列表页面
-.page-container{
+.page-container {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 0; //公共标题
+  .title {
+    position: absolute;
+    top: p2r(32);
+    left: p2r(32);
+    padding-left: p2r(15);
+    color: #fff;
+    h3 {
+      font-size: p2r(64);
+    }
+    p {
+      margin-top: p2r(24);
+      font-size: p2r(24);
+    }
+    .line {
+      width: p2r(5);
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
-//公共标题
-.title{
-  position: absolute;
-  top: p2r(32);
-  left: p2r(32);
-  padding-left: p2r(15);
-  color: #fff;
-  h3{
-    font-size: p2r(64);
+div[class*='swiper-slide'] {
+  .title {
+    h3 {
+      opacity: 0;
+    }
+    p {
+      opacity: 0;
+    }
+    .line {
+      height: 0;
+    }
   }
-  p{
-    margin-top: p2r(24);
-    font-size: p2r(24);
-  }
-  .line{
-    width: p2r(5);
-    height: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+
+div[class*='swiper-slide'].animate {
+  .title {
+    h3 {
+      animation: right2left .8s forwards;
+    }
+    p {
+      animation: right2left .8s forwards;
+    }
+    .line {
+      animation: height2full .8s forwards;
+    }
   }
 }
 
 // 轮播的页面1
-.page1{
-  background:#BE8651;
-  .sphere{
+.page1 {
+  background: #BE8651;
+  .sphere {
     @include size(640, 356);
-    @include bgc('../img/page2/sphere1.png',640);
+    @include bgc('../img/page2/sphere1.png', 640);
     bottom: 0;
   }
-  .bear{
+  .bear {
     @include size(178, 134);
     @include bg('../img/page2/bear1.png');
     right: p2r(38);
     bottom: 0;
   }
-  .scroll-page1{
-    .bg{
+  .scroll-page1 {
+    .bg {
       @include size(576, 573);
-      @include bgc('../img/page2/bg1.png',576);
+      @include bgc('../img/page2/bg1.png', 576);
       bottom: p2r(252);
     }
-    .person{
+    .person {
       @include size(439, 349);
-      @include bgc('../img/page2/front1.png',439);
+      @include bgc('../img/page2/front1.png', 439);
       bottom: p2r(290);
       z-index: 1;
       .files {
-        @include size(85,50);
+        @include size(85, 50);
         position: absolute;
         left: p2r(27);
         bottom: p2r(104);
         background: url('../img/page2/papers.png') no-repeat bottom right;
         background-size: p2r(115) p2r(114);
-        .paper1{
-          @include size(86,26);
+        .paper1 {
+          @include size(86,
+          26);
           position: absolute;
           left: p2r(-70);
           bottom: p2r(45);
@@ -439,8 +361,9 @@ html, body {
           background-position: 0 p2r(-32);
           background-size: p2r(115) p2r(114);
         }
-        .paper2{
-          @include size(64,20);
+        .paper2 {
+          @include size(64,
+          20);
           position: absolute;
           right: p2r(0);
           bottom: p2r(80);
@@ -452,7 +375,8 @@ html, body {
     }
     .msg-box {
       @include bg('../img/page2/txt-bubbl.png');
-      @include size(363, 119);
+      @include size(363,
+      119);
       bottom: p2r(140);
       right: p2r(140);
       display: flex;
@@ -461,29 +385,36 @@ html, body {
       z-index: 1;
       .info {
         @include bg('../img/page2/txt-work.png');
-        @include size(220, 30);
+        @include size(220,
+        30);
       }
     }
   }
-  .scroll-page2{
-    .bg{
-      @include size(582, 520);
-      @include bgc('../img/page2/bg2.png',582);
+  .scroll-page2 {
+    .bg {
+      @include size(582,
+      520);
+      @include bgc('../img/page2/bg2.png',
+      582);
       bottom: p2r(252);
     }
-    .person{
-      @include size(436, 332);
-      @include bgc('../img/page2/relax.png',436);
+    .person {
+      @include size(436,
+      332);
+      @include bgc('../img/page2/relax.png',
+      436);
       bottom: p2r(270);
       z-index: 1;
-      .leg1{
-        @include size(113, 24);
+      .leg1 {
+        @include size(113,
+        24);
         @include bg('../img/page2/leg1.png');
         left: p2r(195);
         bottom: p2r(110);
       }
-      .leg2{
-        @include size(85, 71);
+      .leg2 {
+        @include size(85,
+        71);
         @include bg('../img/page2/leg2.png');
         left: p2r(193);
         bottom: p2r(120);
@@ -491,7 +422,8 @@ html, body {
     }
     .msg-box {
       @include bg('../img/page2/txt-bubbl.png');
-      @include size(363, 119);
+      @include size(363,
+      119);
       bottom: p2r(140);
       right: p2r(140);
       display: flex;
@@ -500,49 +432,59 @@ html, body {
       z-index: 1;
       .info {
         @include bg('../img/page2/txt-life.png');
-        @include size(224, 31);
+        @include size(224,
+        31);
       }
     }
   }
-  .scroll-page3{
-    .bg{
-      @include size(561, 516);
-      @include bgc('../img/page2/bg3.png',561);
+  .scroll-page3 {
+    .bg {
+      @include size(561,
+      516);
+      @include bgc('../img/page2/bg3.png',
+      561);
       bottom: p2r(252);
     }
-    .person{
-      @include size(503, 229);
-      @include bgc('../img/page2/person.png',503);
+    .person {
+      @include size(503,
+      229);
+      @include bgc('../img/page2/person.png',
+      503);
       bottom: p2r(300);
       z-index: 1;
-      .word1{
+      .word1 {
         @include bg('../img/page2/word1.png');
-        @include size(92, 83);
+        @include size(92,
+        83);
         left: p2r(7);
         bottom: p2r(194);
       }
-      .word2{
+      .word2 {
         @include bg('../img/page2/word2.png');
-        @include size(77, 70);
+        @include size(77,
+        70);
         left: p2r(115);
         bottom: p2r(245);
       }
-      .word3{
+      .word3 {
         @include bg('../img/page2/word3.png');
-        @include size(115, 104);
+        @include size(115,
+        104);
         right: p2r(130);
         bottom: p2r(220);
       }
-      .word4{
+      .word4 {
         @include bg('../img/page2/word4.png');
-        @include size(79, 73);
+        @include size(79,
+        73);
         right: p2r(12);
         bottom: p2r(230);
       }
     }
     .msg-box {
       @include bg('../img/page2/txt-bubbl.png');
-      @include size(363, 119);
+      @include size(363,
+      119);
       bottom: p2r(140);
       right: p2r(140);
       display: flex;
@@ -551,8 +493,109 @@ html, body {
       z-index: 1;
       .info {
         @include bg('../img/page2/txt-res.png');
-        @include size(224, 31);
+        @include size(224,
+        31);
       }
+    }
+  }
+}
+
+//设定页面初始状态
+.page1 {
+  .scroll-page1 {
+    .bg {
+      opacity: 0;
+    }
+    .person {
+      opacity: 0;
+    }
+    .msg-box {
+      opacity: 0;
+    }
+  }
+  .scroll-page2 {
+    .bg {
+      opacity: 0;
+    }
+    .person {
+      opacity: 0;
+      .leg2 {
+        transform-origin: left;
+        transform: rotate(25deg);
+      }
+    }
+    .msg-box {
+      opacity: 0;
+    }
+  }
+  .scroll-page3 {
+    .bg {
+      opacity: 0;
+    }
+    .person {
+      opacity: 0;
+    }
+    .msg-box {
+      opacity: 0;
+    }
+  }
+}
+
+.page1.animate {
+  .scroll-page1 {
+    .bg {
+      animation: rotateAndOut 3s forwards;
+    }
+    .person {
+      animation: rotateAndOut 3s .5s forwards;
+      .files {
+        .paper1 {
+          animation: left2Right 1s infinite;
+        }
+        .paper2 {
+          animation: left2Right .5s 1s infinite;
+        }
+      }
+    }
+    .msg-box {
+      animation: rotateText 3s .5s forwards;
+    }
+  }
+  .scroll-page2 {
+    .bg {
+      animation: rotateAndOut 3s 3.5s forwards;
+    }
+    .person {
+      animation: rotateAndOut 3s 4s forwards;
+      .leg2 {
+        animation: legBack .5s infinite;
+      }
+    }
+    .msg-box {
+      animation: rotateText 3s 4s forwards;
+    }
+  }
+  .scroll-page3 {
+    .bg {
+      animation: rotateIn .75s 7s forwards;
+    }
+    .person {
+      animation: rotateIn .75s 7.2s forwards;
+      .word1 {
+        animation: shake .6s .8s infinite;
+      }
+      .word2 {
+        animation: shake .4s .3s infinite;
+      }
+      .word3 {
+        animation: shake .8s .5s infinite;
+      }
+      .word4 {
+        animation: shake .3s .1s infinite;
+      }
+    }
+    .msg-box {
+      animation: rotateTextNoOut .75s 7.5s forwards;
     }
   }
 }
@@ -560,13 +603,16 @@ html, body {
 // 轮播的页面2
 .page2 {
   background: #EE4143;
-  .bg{
-    @include size(592, 490);
-    @include bgc('../img/page3/bg4_.png',592);
+  .bg {
+    @include size(592,
+    490);
+    @include bgc('../img/page3/bg4_.png',
+    592);
     bottom: p2r(330);
   }
-  .bear{
-    @include size(227, 336);
+  .bear {
+    @include size(227,
+    336);
     margin-left: p2r(-227/2);
     background-image: url('../img/page3/bear2.png');
     background-repeat: no-repeat;
@@ -576,292 +622,670 @@ html, body {
     left: 50%;
     bottom: p2r(310);
     z-index: 1;
-    .face1{
-      @include size(102, 102);
+    .face1 {
+      @include size(102,
+      102);
       @include bg('../img/page3/face1.png');
       top: 0;
       left: p2r(-102);
     }
-    .face2{
-      @include size(101, 102);
+    .face2 {
+      @include size(101,
+      102);
       @include bg('../img/page3/face2.png');
       top: p2r(-102);
       right: p2r(-101/2);
     }
-    .hand1{
-      @include size(74, 77);
+    .hand1 {
+      @include size(74,
+      77);
       @include bg('../img/page3/hand-left_.png');
       top: p2r(180);
       left: p2r(30);
     }
-    .hand2{
-      @include size(74, 77);
+    .hand2 {
+      @include size(74,
+      77);
       @include bg('../img/page3/hand-right.png');
       top: p2r(180);
       right: p2r(30);
     }
   }
-  .table{
-    @include size(514, 258);
-    @include bgc('../img/page3/table.png',514);
+  .table {
+    @include size(514,
+    258);
+    @include bgc('../img/page3/table.png',
+    514);
     bottom: p2r(140);
     z-index: 1;
   }
-  .foods{
-    @include size(354, 152);
-    @include bgc('../img/page3/foods.png',354);
+  .foods {
+    @include size(354,
+    152);
+    @include bgc('../img/page3/foods.png',
+    354);
     bottom: p2r(330);
     z-index: 1;
   }
-  .sphere{
-    @include size(640, 356);
-    @include bgc('../img/page3/sphere2.png',640);
+  .sphere {
+    @include size(640,
+    356);
+    @include bgc('../img/page3/sphere2.png',
+    640);
     bottom: 0;
+  }
+}
+
+//设定页面初始状态
+.page2 {
+  .bg {
+    opacity: 0;
+  }
+  .bear {
+    opacity: 0;
+    .face1 {
+      opacity: 0;
+    }
+    .face2 {
+      opacity: 0;
+    }
+  }
+  .table {
+    opacity: 0;
+  }
+  .foods {
+    opacity: 0;
+  }
+}
+
+.page2.animate {
+  .bg {
+    animation: rotateIn .75s forwards;
+  }
+  .bear {
+    animation: bottom2Top .75s 1.3s forwards;
+    .face1 {
+      animation: smallToBig .75s 2s forwards;
+    }
+    .face2 {
+      animation: smallToBig 1.2s 2s forwards;
+    }
+    .hand1 {
+      animation: shakeHandLeft .4s 2.5s infinite;
+    }
+    .hand2 {
+      animation: shakeHandRight .3s 2.3s infinite;
+    }
+  }
+  .table {
+    animation: top2Bottom .75s 1s forwards;
+  }
+  .foods {
+    animation: top2Bottom .75s 1.6s forwards;
   }
 }
 
 // 轮播的页面3
 .page3 {
   background: #DD8A03;
-  .bg{
-    @include size(592, 580);
-    @include bgc('../img/page4/bg5.png',592);
+  .bg {
+    @include size(592,
+    580);
+    @include bgc('../img/page4/bg5.png',
+    592);
     bottom: p2r(300);
   }
-  .bear{
-    @include size(206, 321);
-    @include bgc('../img/page4/bear3.png',206);
+  .bear {
+    @include size(206,
+    321);
+    @include bgc('../img/page4/bear3.png',
+    206);
     bottom: p2r(195);
     z-index: 1;
   }
-  .sphere{
-    @include size(640, 356);
-    @include bgc('../img/page4/sphere3.png',640);
+  .sphere {
+    @include size(640,
+    356);
+    @include bgc('../img/page4/sphere3.png',
+    640);
     bottom: 0;
   }
   .license {
     @include bg('../img/page4/license.png');
     @include size(197,
-      140);
+    140);
     bottom: p2r(500);
     left: p2r(40);
   }
   .oil {
     @include bgc('../img/page4/oil.png',
-      205);
+    205);
     @include size(205,
-      107);
+    107);
     bottom: p2r(660);
   }
   .evil {
     @include bg('../img/page4/evil2.png');
     @include size(198,
-      163);
+    163);
     bottom: p2r(480);
     right: p2r(30);
   }
+}
 
+//踢牌子的熊
+.page3 {
+  .animation-bear-box {
+    .animation-bear1 {
+      @include size(251,
+      335);
+      @include bgc('../img/page4/bear3-1-1.png',
+      251);
+      bottom: p2r(195);
+      z-index: 1;
+      opacity: 0;
+    }
+    .animation-bear2 {
+      @include size(215,
+      313);
+      @include bgc('../img/page4/bear3-2-1.png',
+      215);
+      bottom: p2r(195);
+      z-index: 1;
+      opacity: 0;
+    }
+    .animation-bear3 {
+      @include size(290,
+      321);
+      @include bgc('../img/page4/bear3-3-1.png',
+      290);
+      bottom: p2r(195);
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+  .hit-card-box {
+    .card1 {
+      @include bg('../img/page4/license1.png');
+      @include size(228,
+      151);
+      bottom: p2r(500);
+      left: p2r(40);
+      opacity: 0;
+    }
+    .card2 {
+      @include bgc('../img/page4/oil1.png',
+      231);
+      @include size(231,
+      156);
+      bottom: p2r(660);
+      opacity: 0;
+    }
+    .card3 {
+      @include bg('../img/page4/evil21.png');
+      @include size(211,
+      173);
+      bottom: p2r(480);
+      right: p2r(30);
+      opacity: 0;
+    }
+  }
+}
+
+//设定页面初始状态
+.page3 {
+  .bg {
+    opacity: 0;
+  }
+  .bear {
+    opacity: 0;
+  }
+  .license {
+    opacity: 0;
+  }
+  .oil {
+    opacity: 0;
+  }
+  .evil {
+    opacity: 0;
+  }
+}
+
+.page3.animate {
+  .bg {
+    animation: rotateIn .5s forwards;
+  }
+  .bear {
+    animation: top2Bottom .5s .3s forwards;
+  }
+  .license {
+    animation: smallToBig .5s .8s forwards, shake .5s 1.3s infinite;
+  }
+  .oil {
+    animation: smallToBig .5s .8s forwards, shake .7s 1.5s infinite;
+  }
+  .evil {
+    animation: smallToBig .5s .8s forwards, shake .6s 1.1s infinite;
+  }
 }
 
 // 轮播的页面4
 .page4 {
   background: #40A000;
-  .bg{
-    @include size(588, 333);
-    @include bgc('../img/page5/bg6.png',588);
+  .bg {
+    @include size(588,
+    333);
+    @include bgc('../img/page5/bg6.png',
+    588);
     bottom: p2r(300);
   }
-  .bear{
-    @include size(309, 325);
-    @include bgc('../img/page5/bear4.png',309);
+  .bear {
+    @include size(309,
+    325);
+    @include bgc('../img/page5/bear4.png',
+    309);
     bottom: p2r(170);
     z-index: 1;
   }
-  .sphere{
-    @include size(640, 356);
-    @include bgc('../img/page5/sphere4.png',640);
+  .sphere {
+    @include size(640,
+    356);
+    @include bgc('../img/page5/sphere4.png',
+    640);
     bottom: 0;
   }
-  .card1{
+  .card1 {
     @include bg('../img/page5/card1.png');
-    @include size(160, 175);
+    @include size(160,
+    175);
     left: p2r(32);
     bottom: p2r(435);
   }
-  .card2{
+  .card2 {
     @include bg('../img/page5/card2.png');
-    @include size(161, 209);
+    @include size(161,
+    209);
     bottom: p2r(530);
     left: p2r(240);
   }
-  .card3{
+  .card3 {
     @include bg('../img/page5/card3.png');
-    @include size(167, 184);
+    @include size(167,
+    184);
     bottom: p2r(420);
     right: p2r(45);
+  }
+}
+
+//设定页面初始状态
+.page4 {
+  .bg {
+    opacity: 0;
+  }
+  .bear {
+    opacity: 0;
+  }
+  .card1 {
+    opacity: 0;
+  }
+  .card2 {
+    opacity: 0;
+  }
+  .card3 {
+    opacity: 0;
+  }
+}
+
+.page4.animate {
+  .bg {
+    animation: rotateIn .5s forwards;
+  }
+  .bear {
+    animation: top2Bottom .5s .3s forwards;
+  }
+  .card1 {
+    animation: smallToBig .5s 1s forwards;
+  }
+  .card2 {
+    animation: smallToBig .5s 1s forwards;
+  }
+  .card3 {
+    animation: smallToBig .5s 1s forwards;
   }
 }
 
 // 轮播的页面5
 .page5 {
   background: #0097D0;
-  .bg{
-    @include size(594, 493);
-    @include bgc('../img/page6/bg7.png',594);
+  .bg {
+    @include size(594,
+    493);
+    @include bgc('../img/page6/bg7.png',
+    594);
     bottom: p2r(300);
   }
-  .bear{
-    @include size(230, 390);
-    @include bgc('../img/page6/rider2.png',230);
+  .bear {
+    @include size(230,
+    390);
+    @include bgc('../img/page6/rider2.png',
+    230);
     bottom: p2r(175);
+    z-index: 2;
+    .smoke {
+      @include size(114,
+      26);
+      @include bgc('../img/page6/shadow.png',
+      114);
+      bottom: 0;
+    }
+  }
+  .sphere {
+    @include size(640,
+    356);
+    @include bgc('../img/page6/sphere5.png',
+    640);
+    bottom: 0;
     z-index: 1;
   }
-  .sphere{
-    @include size(640, 356);
-    @include bgc('../img/page6/sphere5.png',640);
-    bottom: 0;
-  }
-  .clound{
-    @include bgc('../img/page6/weather-cloud.png',432);
-    @include size(432, 160);
+  .clound {
+    @include bgc('../img/page6/weather-cloud.png',
+    432);
+    @include size(432,
+    160);
     bottom: p2r(645);
   }
+}
 
+//设定页面初始状态
+.page5 {
+  .bg {
+    opacity: 0;
+  }
+  .bear {
+    opacity: 0;
+    .smoke {
+      opacity: 0;
+    }
+  }
+  .clound {
+    opacity: 0;
+    .snow {
+      @include size(32,
+      32);
+      @include bg('../img/page6/snow-piece.png');
+      position: absolute;
+      bottom: 0;
+      opacity: 0; // left: 10%;
+      // &:nth-child(2) {
+      //     left: 20%;
+      // }
+      //  循环10次 
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          left: $i*10%;
+        }
+      }
+    }
+    .leaf {
+      @include size(40,
+      32);
+      @include bg('../img/page6/leaf_.png');
+      position: absolute;
+      bottom: 0;
+      opacity: 0; // left: 10%;
+      // &:nth-child(2) {
+      //     left: 20%;
+      // }
+      //  循环10次 
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i+10}) {
+          right: $i*10%;
+        }
+      }
+    }
+  }
+}
+
+.page5.animate {
+  .bg {
+    animation: rotateIn .5s forwards;
+  }
+  .bear {
+    animation: upToDown .5s 1s forwards, upAndDown .5s infinite;
+    .smoke {
+      animation: smallToBig .5s 1.2s infinite;
+    }
+  }
+  .clound {
+    animation: smallToBig 1s forwards, shake 1s 1s infinite;
+    .snow {
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation: snowDown 1s (1s+$i*0.1) infinite;
+        }
+      }
+    }
+    .leaf {
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i+10}) {
+          animation: bgDown 2s (1s+$i*0.1) infinite;
+        }
+      }
+    }
+  }
 }
 
 // 轮播的页面6
 .page6 {
   background: #B527A0;
-  .bg{
-    @include size(588, 333);
-    @include bgc('../img/page7/bg8.png',588);
+  .bg {
+    @include size(588,
+    333);
+    @include bgc('../img/page7/bg8.png',
+    588);
     bottom: p2r(300);
   }
-  .bear{
-    @include size(285, 328);
-    @include bgc('../img/page7/bear5.png',285);
+  .bear {
+    @include size(285,
+    328);
+    @include bgc('../img/page7/bear5.png',
+    285);
     bottom: p2r(200);
     z-index: 1;
-    .gift-box{
+    .gift-box {
       position: absolute;
       top: 0;
       left: 50%;
-         /*
+      /*
             为了错开 熊腿 旋转的 角度 不能转满 360%
             350 / 12 =29
             */
-            .gift1 {
-              @include bgc('../img/page7/gift1.png',35);
-              @include size(35, 29);
-              transform: rotateZ(28deg) translateY(p2r(240));
-            }
-            .gift2 {
-              @include bgc('../img/page7/gift2.png',93);
-              @include size(93, 79);
-              transform: rotateZ(28deg*2) translateY(p2r(240));
-            }
-            .gift3 {
-              @include bgc('../img/page7/gift3.png',72);
-              @include size(72, 64);
-              transform: rotateZ(28deg*3) translateY(p2r(240));
-            }
-            .gift4 {
-              @include bgc('../img/page7/gift4.png',91);
-              @include size(91, 73);
-              transform: rotateZ(28deg*4) translateY(p2r(240));
-            }
-            .gift5 {
-              @include bgc('../img/page7/gift5.png',99);
-              @include size(99, 65);
-              transform: rotateZ(28deg*5) translateY(p2r(240));
-            }
-            .gift6 {
-              @include bgc('../img/page7/gift6.png',107);
-              @include size(107, 80);
-              transform: rotateZ(28deg*6) translateY(p2r(240));
-            }
-            .gift7 {
-              @include bgc('../img/page7/gift7.png',107);
-              @include size(107, 80);
-              transform: rotateZ(28deg*7) translateY(p2r(240));
-            }
-            .gift8 {
-              @include bgc('../img/page7/gift8.png',88);
-              @include size(88, 64);
-              transform: rotateZ(28deg*8) translateY(p2r(240));
-            }
-            .gift9 {
-              @include bgc('../img/page7/gift9.png',78);
-              @include size(78, 50);
-              transform: rotateZ(28deg*9) translateY(p2r(240));
-            }
-            .gift10 {
-              @include bgc('../img/page7/gift10.png',49);
-              @include size(49, 37);
-              transform: rotateZ(28deg*10) translateY(p2r(240));
-            }
-            .gift11 {
-              @include bgc('../img/page7/gift11.png',51);
-              @include size(51, 31);
-              transform: rotateZ(28deg*11) translateY(p2r(240));
-            }
-            .gift12 {
-              @include bgc('../img/page7/gift12.png',37);
-              @include size(37, 23);
-              transform: rotateZ(28deg*12) translateY(p2r(240));
-            }
-          }
-        }
-        .sphere{
-          @include size(640, 356);
-          @include bgc('../img/page7/sphere6.png',640);
-          bottom: 0;
-        }
-        .clound{
-          @include bgc('../img/page7/weather-cloud.png',432);
-          @include size(432, 160);
-          bottom: p2r(645);
-        }
-
+      .gift1 {
+        @include bgc('../img/page7/gift1.png',
+        35);
+        @include size(35,
+        29);
+        transform: rotateZ(28deg) translateY(p2r(240));
       }
+      .gift2 {
+        @include bgc('../img/page7/gift2.png',
+        93);
+        @include size(93,
+        79);
+        transform: rotateZ(28deg*2) translateY(p2r(240));
+      }
+      .gift3 {
+        @include bgc('../img/page7/gift3.png',
+        72);
+        @include size(72,
+        64);
+        transform: rotateZ(28deg*3) translateY(p2r(240));
+      }
+      .gift4 {
+        @include bgc('../img/page7/gift4.png',
+        91);
+        @include size(91,
+        73);
+        transform: rotateZ(28deg*4) translateY(p2r(240));
+      }
+      .gift5 {
+        @include bgc('../img/page7/gift5.png',
+        99);
+        @include size(99,
+        65);
+        transform: rotateZ(28deg*5) translateY(p2r(240));
+      }
+      .gift6 {
+        @include bgc('../img/page7/gift6.png',
+        107);
+        @include size(107,
+        80);
+        transform: rotateZ(28deg*6) translateY(p2r(240));
+      }
+      .gift7 {
+        @include bgc('../img/page7/gift7.png',
+        107);
+        @include size(107,
+        80);
+        transform: rotateZ(28deg*7) translateY(p2r(240));
+      }
+      .gift8 {
+        @include bgc('../img/page7/gift8.png',
+        88);
+        @include size(88,
+        64);
+        transform: rotateZ(28deg*8) translateY(p2r(240));
+      }
+      .gift9 {
+        @include bgc('../img/page7/gift9.png',
+        78);
+        @include size(78,
+        50);
+        transform: rotateZ(28deg*9) translateY(p2r(240));
+      }
+      .gift10 {
+        @include bgc('../img/page7/gift10.png',
+        49);
+        @include size(49,
+        37);
+        transform: rotateZ(28deg*10) translateY(p2r(240));
+      }
+      .gift11 {
+        @include bgc('../img/page7/gift11.png',
+        51);
+        @include size(51,
+        31);
+        transform: rotateZ(28deg*11) translateY(p2r(240));
+      }
+      .gift12 {
+        @include bgc('../img/page7/gift12.png',
+        37);
+        @include size(37,
+        23);
+        transform: rotateZ(28deg*12) translateY(p2r(240));
+      }
+    }
+  }
+  .sphere {
+    @include size(640,
+    356);
+    @include bgc('../img/page7/sphere6.png',
+    640);
+    bottom: 0;
+  }
+  .clound {
+    @include bgc('../img/page7/weather-cloud.png',
+    432);
+    @include size(432,
+    160);
+    bottom: p2r(645);
+  }
+}
+
+.page6 {
+  .bg {
+    opacity: 0;
+  }
+  .bear {
+    opacity: 0;
+  }
+  .gift-box {
+    >div {
+      opacity: 0;
+    }
+  }
+}
+
+.page6.animate {
+  .bg {
+    animation: rotateIn .5s forwards;
+  }
+  .bear {
+    animation: upToDown .5s 1s forwards;
+  }
+  .gift-box {
+    >div {
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+          animation: giftAppear 3s (1s+$i*0.1) infinite;
+        }
+      }
+    }
+    >div {
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i})> div {
+          animation: shake 1s (1s+$i*0.1) infinite;
+        }
+      }
+    }
+  }
+}
 
 // 轮播的页面7
 .page7 {
   background: #19072A;
-  .streetlight{
-    @include size(80, 443);
+  .streetlight {
+    @include size(80,
+    443);
     @include bg('../img/page8/streetlight.png');
     left: p2r(240);
     bottom: p2r(300);
-    .lamplight{
+    .lamplight {
       position: absolute;
-      @include size(437, 427);
+      @include size(437,
+      427);
       @include bg('../img/page8/lamplight.png');
       top: p2r(10);
       left: p2r(-140);
     }
   }
-  .bear{
-    @include size(276, 271);
-    @include bgc('../img/page8/bear6.png',276);
+  .bear {
+    @include size(276,
+    271);
+    @include bgc('../img/page8/bear6.png',
+    276);
     bottom: p2r(280);
     z-index: 1;
   }
-  .sphere{
-    @include size(640, 384);
-    @include bgc('../img/page8/sphere7.png',640);
+  .sphere {
+    @include size(640,
+    384);
+    @include bgc('../img/page8/sphere7.png',
+    640);
     bottom: 0;
   }
-  .moto{
-    @include size(200, 137);
+  .moto {
+    @include size(200,
+    137);
     @include bg('../img/page8/moto.png');
-    left:p2r(110);
+    left: p2r(110);
     bottom: p2r(320);
   }
-  .share{
-    @include size(379, 113);
-    @include bgc('../img/page8/share.png',379);
+  .share {
+    @include size(379,
+    113);
+    @include bgc('../img/page8/share.png',
+    379);
     bottom: p2r(140);
   }
-
 }

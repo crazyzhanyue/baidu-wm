@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="renderer" content="webkit" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta content="telephone=no" name="format-detection" />
@@ -12,124 +14,126 @@
   <title>baiduWM</title>
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script>
-   // 页面打开 立即计算fontSize
-   document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+    // 页面打开 立即计算fontSize
+    document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
     //方便调试
     window.onresize = function () {
-        document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+      document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
     }
-</script>
+  </script>
 </head>
+
 <body>
-    <!-- 入场动画 -->
-    <div class="loading" style="display: none;">
-        <div class="rider"></div>
-        <div class="progress">
-            <div class="step"></div>
-        </div>
-        <div class="info"></div>
-        <div class="logo"></div>
-        <div class="copyright">
-            @ 2017 BaiDu Waimai Produced
-        </div>
+  <span style="display: none;">"87909289cc671c813be7bff336568169"</span>
+  <!-- 入场动画 -->
+  <div class="loading" style="display: none;">
+    <div class="rider"></div>
+    <div class="progress">
+      <div class="step"></div>
     </div>
-
-    <!-- 欢迎页面 -->
-    <div class="welcome" style="display: none;">
-        <!-- 文字信息 -->
-        <div class="info">
-            <div class="hello"></div>
-        </div>
-        <!-- 云-->
-        <div class="cloud"></div>
-        <!-- 熊 -->
-        <div class="bear-box">
-            <div class="bear"></div>
-            <div class="smoke"></div>
-        </div>
-        <!-- 树 -->
-        <div class="trees"></div>
-        <!-- 草地 -->
-        <div class="grass1"></div>
-        <div class="grass2"></div>
-
-        <!-- 旋转按钮 -->
-        <div class="rotate-btn-box">
-            <div class="btn"></div>
-            <div class="circle"></div>
-        </div>
+    <div class="info"></div>
+    <div class="logo"></div>
+    <div class="copyright">
+      @ 2017 BaiDu Waimai Produced
     </div>
+  </div>
 
-    <!-- 页面容器 -->
-    <div class="page-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide page1">
-                <!-- 简介 -->
-                <div class="title">
-                    <h3>生活中</h3>
-                    <p>偶尔会这样哦！</p>
-                    <div class="line"></div>
-                </div>
-                <!-- 轮播盒子1 -->
-                <div class="scroll-page1">
-                    <div class="bg"></div>
-                    <div class="person">
-                        <!-- 纸 -->
-                        <div class="files">
-                            <div class="paper1"></div>
-                            <div class="paper2"></div>
-                        </div>
-                    </div>
-                    <div class="msg-box">
-                        <div class="info"></div>
-                    </div>
-                </div>
-                <!-- 轮播盒子2 -->
-                <div class="scroll-page2">
-                 <div class="bg"></div>
-                 <div class="person">
-                    <div class="leg1"></div>
-                    <div class="leg2"></div>
-                </div>
-                <div class="msg-box">
-                    <div class="info"></div>
-                </div>
+  <!-- 欢迎页面 -->
+  <div class="welcome" style="display: none;">
+    <!-- 文字信息 -->
+    <div class="info">
+      <div class="hello"></div>
+    </div>
+    <!-- 云-->
+    <div class="cloud"></div>
+    <!-- 熊 -->
+    <div class="bear-box">
+      <div class="bear"></div>
+      <div class="smoke"></div>
+    </div>
+    <!-- 树 -->
+    <div class="trees"></div>
+    <!-- 草地 -->
+    <div class="grass1"></div>
+    <div class="grass2"></div>
+
+    <!-- 旋转按钮 -->
+    <div class="rotate-btn-box">
+      <div class="btn"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <!-- 页面容器 -->
+  <div class="page-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide page1 animate">
+        <!-- 简介 -->
+        <div class="title">
+          <h3>生活中</h3>
+          <p>偶尔会这样哦！</p>
+          <div class="line"></div>
+        </div>
+        <!-- 轮播盒子1 -->
+        <div class="scroll-page1">
+          <div class="bg"></div>
+          <div class="person">
+            <!-- 纸 -->
+            <div class="files">
+              <div class="paper1"></div>
+              <div class="paper2"></div>
             </div>
-            <!-- 轮播盒子3 -->
-            <div class="scroll-page3">
-             <div class="bg"></div>
-             <div class="person">
-                <div class="word1"></div>
-                <div class="word2"></div>
-                <div class="word3"></div>
-                <div class="word4"></div>
-            </div>
-            <div class="msg-box">
-                <div class="info"></div>
-            </div>
+          </div>
+          <div class="msg-box">
+            <div class="info"></div>
+          </div>
+        </div>
+        <!-- 轮播盒子2 -->
+        <div class="scroll-page2">
+          <div class="bg"></div>
+          <div class="person">
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+          </div>
+          <div class="msg-box">
+            <div class="info"></div>
+          </div>
+        </div>
+        <!-- 轮播盒子3 -->
+        <div class="scroll-page3">
+          <div class="bg"></div>
+          <div class="person">
+            <div class="word1"></div>
+            <div class="word2"></div>
+            <div class="word3"></div>
+            <div class="word4"></div>
+          </div>
+          <div class="msg-box">
+            <div class="info"></div>
+          </div>
         </div>
 
         <!-- 星球 -->
         <div class="sphere"></div>
         <!-- 熊 -->
         <div class="bear"></div>
-    </div>
+      </div>
 
-    <div class="swiper-slide page2">
+      <div class="swiper-slide page2">
         <!-- 简介 -->
         <div class="title">
-            <h3>生活中</h3>
-            <p>偶尔会这样哦！</p>
-            <div class="line"></div>
+          <h3>生活中</h3>
+          <p>偶尔会这样哦！</p>
+          <div class="line"></div>
         </div>
         <!-- 背景 -->
         <div class="bg"></div>
         <!-- 熊 -->
         <div class="bear">
-            <div class="face1"></div>
-            <div class="face2"></div>
-            <div class="hand1"></div>
-            <div class="hand2"></div>
+          <div class="face1"></div>
+          <div class="face2"></div>
+          <div class="hand1"></div>
+          <div class="hand2"></div>
         </div>
         <!-- 桌子 -->
         <div class="table"></div>
@@ -137,115 +141,155 @@
         <div class="foods"></div>
         <!-- 星球 -->
         <div class="sphere"></div>
+      </div>
+
+      <div class="swiper-slide page3">
+        <!-- 简介 -->
+        <div class="title">
+          <h3>生活中</h3>
+          <p>偶尔会这样哦！</p>
+          <div class="line"></div>
+        </div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!-- 熊 -->
+        <div class="bear"></div>
+        <!-- 踢牌子的熊 -->
+        <div class="animation-bear-box">
+          <div class="animation-bear1"></div>
+          <div class="animation-bear2"></div>
+          <div class="animation-bear3"></div>
+        </div>
+        <!-- 星球 -->
+        <div class="sphere"></div>
+        <!-- 牌子 -->
+        <div class="normal-card">
+          <div class="license"></div>
+          <div class="oil"></div>
+          <div class="evil"></div>
+        </div>
+
+        <!-- 踢掉的牌子 -->
+        <div class="hit-card-box">
+          <div class="card1"></div>
+          <div class="card2"></div>
+          <div class="card3"></div>
+        </div>
+      </div>
+
+      <div class="swiper-slide page4">
+        <!-- 简介 -->
+        <div class="title">
+          <h3>生活中</h3>
+          <p>偶尔会这样哦！</p>
+          <div class="line"></div>
+        </div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!-- 熊 -->
+        <div class="bear"></div>
+        <!-- 星球 -->
+        <div class="sphere"></div>
+        <div class="card1"></div>
+        <div class="card2"></div>
+        <div class="card3"></div>
+      </div>
+
+      <div class="swiper-slide page5">
+        <!-- 简介 -->
+        <div class="title">
+          <h3>生活中</h3>
+          <p>偶尔会这样哦！</p>
+          <div class="line"></div>
+        </div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!-- 熊 -->
+        <div class="bear">
+          <div class="smoke"></div>
+        </div>
+
+        <!-- 星球 -->
+        <div class="sphere"></div>
+        <!-- 云 -->
+        <div class="clound">
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="snow"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+          <div class="leaf"></div>
+        </div>
+      </div>
+
+      <div class="swiper-slide page6">
+        <!-- 简介 -->
+        <div class="title">
+          <h3>生活中</h3>
+          <p>偶尔会这样哦！</p>
+          <div class="line"></div>
+        </div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+        <!-- 熊 -->
+        <div class="bear">
+          <div class="gift-box">
+            <div><div class="gift1"></div></div>
+            <div><div class="gift2"></div></div>
+            <div><div class="gift3"></div></div>
+            <div><div class="gift4"></div></div>
+            <div><div class="gift5"></div></div>
+            <div><div class="gift6"></div></div>
+            <div><div class="gift7"></div></div>
+            <div><div class="gift8"></div></div>
+            <div><div class="gift9"></div></div>
+            <div><div class="gift10"></div></div>
+            <div><div class="gift11"></div></div>
+            <div><div class="gift12"></div></div>
+          </div>
+        </div>
+        <!-- 星球 -->
+        <div class="sphere"></div>
+
+      </div>
+
+      <div class="swiper-slide page7">
+        <!-- 简介 -->
+        <div class="title">
+          <h3>所有的努力</h3>
+          <p>就是为了健康美味的外面。。。
+            <br>呈现给你。。。</p>
+          <div class="line"></div>
+        </div>
+        <!-- 灯 -->
+        <div class="streetlight">
+          <div class="lamplight"></div>
+        </div>
+        <!-- 熊 -->
+        <div class="bear"></div>
+        <!-- 星球 -->
+        <div class="sphere"></div>
+        <!-- 摩托 -->
+        <div class="moto"></div>
+        <!-- 分享 -->
+        <div class="share"></div>
+      </div>
     </div>
-
-    <div class="swiper-slide page3">
-      <!-- 简介 -->
-      <div class="title">
-        <h3>生活中</h3>
-        <p>偶尔会这样哦！</p>
-        <div class="line"></div>
-    </div>
-    <!-- 背景 -->
-    <div class="bg"></div>
-    <!-- 熊 -->
-    <div class="bear"></div>
-    <!-- 星球 -->
-    <div class="sphere"></div>
-    <!-- 牌子 -->
-    <div class="license"></div>
-    <div class="oil"></div>
-    <div class="evil"></div>
-</div>
-
-<div class="swiper-slide page4">
-  <!-- 简介 -->
-  <div class="title">
-    <h3>生活中</h3>
-    <p>偶尔会这样哦！</p>
-    <div class="line"></div>
-</div>
-<!-- 背景 -->
-<div class="bg"></div>
-<!-- 熊 -->
-<div class="bear"></div>
-<!-- 星球 -->
-<div class="sphere"></div>
-<div class="card1"></div>
-<div class="card2"></div>
-<div class="card3"></div>
-</div>
-
-<div class="swiper-slide page5">
-  <!-- 简介 -->
-  <div class="title">
-    <h3>生活中</h3>
-    <p>偶尔会这样哦！</p>
-    <div class="line"></div>
-</div>
-<!-- 背景 -->
-<div class="bg"></div>
-<!-- 熊 -->
-<div class="bear"></div>
-<!-- 星球 -->
-<div class="sphere"></div>
-<!-- 云 -->
-<div class="clound"></div>
-</div>
-
-<div class="swiper-slide page6">
-  <!-- 简介 -->
-  <div class="title">
-    <h3>生活中</h3>
-    <p>偶尔会这样哦！</p>
-    <div class="line"></div>
-</div>
-<!-- 背景 -->
-<div class="bg"></div>
-<!-- 熊 -->
-<div class="bear">
-    <div class="gift-box">
-        <div class="gift1"></div>
-        <div class="gift2"></div>
-        <div class="gift3"></div>
-        <div class="gift4"></div>
-        <div class="gift5"></div>
-        <div class="gift6"></div>
-        <div class="gift7"></div>
-        <div class="gift8"></div>
-        <div class="gift9"></div>
-        <div class="gift10"></div>
-        <div class="gift11"></div>
-        <div class="gift12"></div>
-    </div>
-</div>
-<!-- 星球 -->
-<div class="sphere"></div>
-
-</div>
-
-<div class="swiper-slide page7">
-  <!-- 简介 -->
-  <div class="title">
-    <h3>所有的努力</h3>
-    <p>就是为了健康美味的外面。。。<br>呈现给你。。。</p>
-    <div class="line"></div>
-</div>
-<!-- 灯 -->
-<div class="streetlight">
-    <div class="lamplight"></div>
-</div>
-<!-- 熊 -->
-<div class="bear"></div>
-<!-- 星球 -->
-<div class="sphere"></div>
-<!-- 摩托 -->
-<div class="moto"></div>
-<!-- 分享 -->
-<div class="share"></div>
-</div>
-</div>
-</div>
+  </div>
 
 
 </body>
@@ -255,29 +299,79 @@
   // 使用 swiper 实现 滑动切换效果
   var swiper = new Swiper('.page-container', {
     direction: 'vertical',
-});
+    // swiper的事件中 可以接受swiper作为参数
+    onSlideChangeEnd: function (swiper) {
+      // alert(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+      console.log(swiper.activeIndex);
+      // 逻辑6.移除所有animate类
+      $('.swiper-slide').removeClass('animate');
+      // 逻辑7.为当前页添加animateclass
+      $('.swiper-slide').eq(swiper.activeIndex).addClass('animate');
+
+      // 判断如果是 第三页 索引是从0开始
+      if (swiper.activeIndex == 2) {
+        console.log('不要滑动了');
+        // $('.swiper-slide').eq(swiper.activeIndex).addClass('swiper-no-swiping');
+      }
+      // 有没有 切换的上一页的索引值呢？
+      console.log('上一页的索引' + swiper.previousIndex);
+      // 如果上一次 显示的页面是 索引为2的那一页 说明 之前播放了 动画
+      if (swiper.previousIndex == 2) {
+        $('.swiper-slide').eq(2).find('.bear').attr('style', '');
+        $('.animation-bear-box div').attr('style', '');
+        $('.normal-card div').attr('style', '');
+        $('.hit-card-box div').attr('style', '');
+      }
+    }
+  });
 
   $(function () {
     setTimeout(function () {
-        $('.loading').addClass('animate');
-        $('.loading .step').on('animationend',function(){
-          $('.loading').fadeOut(100,function(){
-            // 淡出之后 为 welcome 添加 animate
-            $('.welcome').addClass('animate');
-          });
+      $('.loading').addClass('animate');
+      $('.loading .step').on('animationend', function () {
+        $('.loading').fadeOut(100, function () {
+          // 淡出之后 为 welcome 添加 animate
+          $('.welcome').addClass('animate');
         });
+      });
     }, 1000);
 
     // 第二页的 按钮的 点击
-    $('.welcome .rotate-btn-box').click(function(){
-      $('.bear-box').css('animation','none');
-      $('.welcome').fadeOut(1000,function(){
+    $('.welcome .rotate-btn-box').click(function () {
+      $('.bear-box').css('animation', 'none');
+      $('.welcome').fadeOut(1000, function () {
         // 为 swiper的 第一页 添加 animate class
         $('.page1').addClass('animate');
       });
-    })
-});
+    });
+
+    $('.swiper-slide').eq(2).click(function () {
+      var that = this;
+      //无法隐藏的原因
+      // $(this).children('.bear').css('opacity',0);
+      $(this).children('.bear').css('animation', 'none');
+      var index = 0;
+      interId = setInterval(function () {
+        //踢牌子
+        $('.animation-bear-box div').css('opacity', 0);
+        $('.animation-bear-box div').eq(index).css('opacity', 1);
+        //隐藏原来的牌子
+        $('.normal-card div').eq(index).css('animation', 'none');
+        //显示坏掉的牌子
+        $('.hit-card-box div').eq(index).css('opacity', 1);
+        if (index == 2) {
+          clearInterval(interId);
+          $('.hit-card-box div').css('animation', 'top2BottomHide .8s forwards');
+          $(that).removeClass('swiper-no-swiping');
+        }
+        index++;
+      }, 1000);
+
+    });
 
 
+
+  });
 </script>
+
 </html>

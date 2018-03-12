@@ -1,29 +1,417 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  // tap高亮 一般给透明即可
+  box-sizing: border-box; // tap高亮 一般给透明即可
   -webkit-tap-highlight-color: transparent;
 }
-ul,ol{
+
+ul,
+ol {
   list-style: none;
 }
-a{
+
+a {
   text-decoration: none;
 }
-.fl{
+
+.fl {
   float: left;
 }
-.fr{
+
+.fr {
   float: right;
 }
+
 .clearfix::before,
-.clearfix::after{
-  content:'';
+.clearfix::after {
+  content: '';
   display: block;
   clear: both;
 }
-.clearfix{
+
+.clearfix {
   // 移动端这里可以省略
   zoom: 1;
+}
+
+/**loading页面动画**/
+
+// 进度条100%
+@keyframes steps {
+  to {
+    width: 100%;
+  }
+}
+
+// 熊开车动画
+@keyframes bearRide {
+  10% {
+    transform: translateX(p2r(-26*1)) translateY(p2r(-10));
+  }
+  20% {
+    transform: translateX(p2r(-26*2)) translateY(p2r(10));
+  }
+  30% {
+    transform: translateX(p2r(-26*3)) translateY(p2r(-10));
+  }
+  40% {
+    transform: translateX(p2r(-26*4)) translateY(p2r(10));
+  }
+  50% {
+    transform: translateX(p2r(-26*5)) translateY(p2r(-10));
+  }
+  60% {
+    transform: translateX(p2r(-26*6)) translateY(p2r(10));
+  }
+  70% {
+    transform: translateX(p2r(-26*7)) translateY(p2r(-10));
+  }
+  80% {
+    transform: translateX(p2r(-26*8)) translateY(p2r(10));
+  }
+  90% {
+    transform: translateX(p2r(-26*9)) translateY(p2r(-10));
+  }
+  100% {
+    transform: translateX(p2r(-26*10)) translateY(p2r(10));
+  }
+}
+
+/**welcome页面动画**/
+
+//草地动画
+@keyframes grass1 {
+  to {
+    height: p2r(396);
+  }
+}
+
+// 页面2 草2 动画 大-> 小
+@keyframes grass2 {
+  from {
+    transform: scale(2, 1);
+  }
+  to {
+    opacity: 1; // 用自己 默认的 transform
+  }
+}
+
+// 页面2 树动画
+@keyframes trees {
+  from {
+    transform: translateY(-50%);
+  }
+  80% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+//旋转
+@keyframes rotate {
+  form {}
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//上下 跳动
+@keyframes upAndDown {
+  from {
+    transform: translateY(-5%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+//从上到下
+@keyframes upToDown {
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//由小变大
+@keyframes smallToBig {
+  0% {
+    transform: scale(0, 0);
+  }
+  80% {
+    transform: scale(1.5, 1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/**轮播页面文字特效**/
+
+//从右至左
+@keyframes right2left {
+  from {
+    transform: translateX(80%);
+  }
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+//高度变为100%
+@keyframes height2full {
+  to {
+    height: 100%;
+  }
+}
+
+/**page1页面动画**/
+
+// 腿旋转回去
+@keyframes legBack {
+  to {
+    transform: none
+  }
+}
+
+//晃动
+@keyframes shake {
+  25% {
+    transform: translate(4%, 0);
+  }
+  50% {
+    transform: translate(0, -4%);
+  }
+  75% {
+    transform: translate(-4%, 0);
+  }
+  100% {
+    transform: translate(0, 4%);
+  }
+}
+
+// 旋转出现动画 并且最后消失
+@keyframes rotateAndOut {
+  0% {
+    transform: rotate(90deg);
+    transform-origin: 50% 200%;
+  }
+  20% {
+    transform: rotate(-5deg);
+    transform-origin: 50% 200%;
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(0deg);
+    transform-origin: 50% 200%;
+    opacity: 1;
+  }
+  70% {
+    transform: rotate(0deg);
+    transform-origin: 50% 200%;
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(5deg);
+    transform-origin: 50% 200%;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-90deg);
+    transform-origin: 50% 200%;
+    opacity: 0;
+  }
+}
+
+// 旋转进入最后不消失
+@keyframes rotateIn {
+  0% {
+    transform: rotate(90deg);
+    transform-origin: 50% 200%;
+  }
+  90% {
+    transform: rotate(-5deg);
+    transform-origin: 50% 200%;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 200%;
+    opacity: 1;
+  }
+}
+
+// 左右晃动
+@keyframes left2Right {
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+//旋转出现提示文本 最后消失
+@keyframes rotateText {
+  0% {
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+  }
+  20% {
+    transform: rotate(-50deg);
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(0deg);
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+  70% {
+    transform: rotate(0deg);
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(50deg);
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-90deg);
+    transform-origin: right bottom;
+    opacity: 0;
+  }
+}
+
+//旋转出现提示文本 最后不消失
+@keyframes rotateTextNoOut {
+  0% {
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+  }
+  50% {
+    transform: rotate(-50deg);
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+}
+
+/**page2页面动画**/
+
+//由下到上
+@keyframes bottom2Top {
+  from {
+    transform: translateY(120%);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+//由上到下
+@keyframes top2Bottom {
+  from {
+    transform: translateY(-120%);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+//由上到下消失
+@keyframes top2BottomHide {
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+//晃动左手
+@keyframes shakeHandLeft {
+  25% {
+    transform: rotate(5deg);
+    transform-origin: 0 0;
+  }
+  75% {
+    transform: rotate(-5deg);
+    transform-origin: 0 0;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+//晃动右手
+@keyframes shakeHandRight {
+  25% {
+    transform: rotate(-6deg);
+    transform-origin: 100% 0;
+  }
+  75% {
+    transform: rotate(7deg);
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/**page5页面动画**/
+@keyframes snowDown {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: .3;
+  }
+  to {
+    transform: translateY(1500%) translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes bgDown {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: .3;
+  }
+  to {
+    transform: translateY(1500%) translateX(100%);
+    opacity: 0;
+  }
+}
+
+/**page6页面动画**/
+// 礼物 超四周发散的动画
+@keyframes giftAppear {
+  from {
+    transform: none;
+  } // 结束的状态 是自己默认的
+  to {
+    opacity: 1; // 结束的时候 是我们设置的那个样式
+  }
 }
