@@ -18,36 +18,6 @@ body {
   overflow: hidden;
 }
 
-// 为了 一会 使用的时候 有提示 写在 index页面中
-//  计算尺寸函数
-@function p2r($size) {
-  @return ($size/32)*1rem;
-}
-
-// 设置图片居中
-// background center
-// 传入url 图片宽度即可
-@mixin bgc ($url, $width) {
-  background: url($url) no-repeat center /100% 100%;
-  position: absolute;
-  left: 50%; // 这里 使用margin-left来实现 左右居中目的是 为了 后面动画中 我们要使用 transform来改变元素
-  margin-left: p2r(-$width/2);
-}
-
-// 直接设置背景图 不考虑居中
-// 传入 url即可
-@mixin bg($url) {
-  background: url($url) no-repeat center /100% 100%;
-  position: absolute;
-}
-
-// 设置 尺寸
-// 传入 宽度 高度
-@mixin size($width, $height) {
-  width: p2r($width);
-  height: p2r($height);
-}
-
 // loading 动画加载页面
 .loading {
   width: 100%;
@@ -1015,11 +985,7 @@ div[class*='swiper-slide'].animate {
       @include bg('../img/page6/snow-piece.png');
       position: absolute;
       bottom: 0;
-      opacity: 0; // left: 10%;
-      // &:nth-child(2) {
-      //     left: 20%;
-      // }
-      //  循环10次 
+      opacity: 0; //  循环10次 
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
           left: $i*10%;
@@ -1032,11 +998,7 @@ div[class*='swiper-slide'].animate {
       @include bg('../img/page6/leaf_.png');
       position: absolute;
       bottom: 0;
-      opacity: 0; // left: 10%;
-      // &:nth-child(2) {
-      //     left: 20%;
-      // }
-      //  循环10次 
+      opacity: 0; //  循环10次 
       @for $i from 1 through 10 {
         &:nth-child(#{$i+10}) {
           right: $i*10%;
@@ -1176,66 +1138,66 @@ div[class*='swiper-slide'].animate {
     .gift-box {
       position: absolute;
       top: 0;
-      left: 50%;
+      left: 30%;
       >div:nth-child(1) {
         @include size(35,
         29);
-        transform: rotateZ(28deg) translateY(p2r(240));
+        transform: rotateZ(28deg) translateY(p2r(250));
       }
       >div:nth-child(2) {
         @include size(93,
         79);
-        transform: rotateZ(28deg*2) translateY(p2r(240));
+        transform: rotateZ(28deg*2) translateY(p2r(250));
       }
       >div:nth-child(3) {
         @include size(72,
         64);
-        transform: rotateZ(28deg*3) translateY(p2r(240));
+        transform: rotateZ(28deg*3) translateY(p2r(250));
       }
       >div:nth-child(4) {
         @include size(91,
         73);
-        transform: rotateZ(28deg*4) translateY(p2r(240));
+        transform: rotateZ(28deg*4) translateY(p2r(250));
       }
       >div:nth-child(5) {
         @include size(99,
         65);
-        transform: rotateZ(28deg*5) translateY(p2r(240));
+        transform: rotateZ(28deg*5) translateY(p2r(250));
       }
       >div:nth-child(6) {
         @include size(107,
         80);
-        transform: rotateZ(28deg*6) translateY(p2r(240));
+        transform: rotateZ(28deg*6) translateY(p2r(250));
       }
       >div:nth-child(7) {
         @include size(107,
         80);
-        transform: rotateZ(28deg*7) translateY(p2r(240));
+        transform: rotateZ(28deg*7) translateY(p2r(250));
       }
       >div:nth-child(8) {
         @include size(88,
         64);
-        transform: rotateZ(28deg*8) translateY(p2r(240));
+        transform: rotateZ(28deg*8) translateY(p2r(250));
       }
       >div:nth-child(9) {
         @include size(78,
         50);
-        transform: rotateZ(28deg*9) translateY(p2r(240));
+        transform: rotateZ(28deg*9) translateY(p2r(250));
       }
       >div:nth-child(10) {
         @include size(49,
         37);
-        transform: rotateZ(28deg*10) translateY(p2r(240));
+        transform: rotateZ(28deg*10) translateY(p2r(250));
       }
       >div:nth-child(11) {
         @include size(51,
         31);
-        transform: rotateZ(28deg*11) translateY(p2r(240));
+        transform: rotateZ(28deg*11) translateY(p2r(250));
       }
       >div:nth-child(12) {
         @include size(37,
         23);
-        transform: rotateZ(28deg*12) translateY(p2r(240));
+        transform: rotateZ(28deg*12) translateY(p2r(250));
       }
     }
   }
@@ -1279,12 +1241,12 @@ div[class*='swiper-slide'].animate {
   }
   @for $i from 1 through 12 {
     .gift-box>div:nth-child(#{$i}) {
-      animation: giftAppear 2s $i*0.1s infinite;
+      animation: giftAppear 3s $i*0.1s infinite;
     }
   }
   @for $i from 1 through 12 {
     .gift-box>div:nth-child(#{$i})>div {
-      animation: rotate 1s $i*0.1s infinite;
+      animation: rotate 1s $i*0.2s infinite;
     }
   }
 }
@@ -1335,5 +1297,24 @@ div[class*='swiper-slide'].animate {
     @include bgc('../img/page8/share.png',
     379);
     bottom: p2r(140);
+  }
+}
+
+//设定页面初始状态
+.page7 {
+  .bear {
+    opacity: 0;
+  }
+  .moto {
+    opacity: 0;
+  }
+}
+
+.page7.animate {
+  .moto {
+    animation: rotateIn .5s .3s forwards;
+  }
+  .bear {
+    animation: top2Bottom .8s .6s forwards;
   }
 }

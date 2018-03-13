@@ -24,9 +24,11 @@
 </head>
 
 <body>
-<span style="display: none">"3ce10015ba13a425589d7db03a79d340"</span>
+  <span style="display: none">
+    628c47489e945021828b677ddeca88971ae2507b "26782e64fe6e75f4fd6ede2cc0e27ca8"
+  </span>
   <!-- 入场动画 -->
-  <div class="loading" style="display: none;">
+  <div class="loading">
     <div class="rider"></div>
     <div class="progress">
       <div class="step"></div>
@@ -39,7 +41,7 @@
   </div>
 
   <!-- 欢迎页面 -->
-  <div class="welcome" style="display: none;">
+  <div class="welcome">
     <!-- 文字信息 -->
     <div class="info">
       <div class="hello"></div>
@@ -48,7 +50,7 @@
     <div class="cloud"></div>
     <!-- 熊 -->
     <div class="bear-box">
-      <div class="bear"></div>
+      <div class="bear" id="bearOut"></div>
       <div class="smoke"></div>
     </div>
     <!-- 树 -->
@@ -67,11 +69,11 @@
   <!-- 页面容器 -->
   <div class="page-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide page1 animate">
+      <div class="swiper-slide page1">
         <!-- 简介 -->
         <div class="title">
-          <h3>生活中</h3>
-          <p>偶尔会这样哦！</p>
+          <h3>生活中，</h3>
+          <p>经常有这种时候！</p>
           <div class="line"></div>
         </div>
         <!-- 轮播盒子1 -->
@@ -122,8 +124,8 @@
       <div class="swiper-slide page2">
         <!-- 简介 -->
         <div class="title">
-          <h3>生活中</h3>
-          <p>偶尔会这样哦！</p>
+          <h3>这个时候</h3>
+          <p>如果给你送来一份好吃的！</p>
           <div class="line"></div>
         </div>
         <!-- 背景 -->
@@ -146,8 +148,8 @@
       <div class="swiper-slide page3">
         <!-- 简介 -->
         <div class="title">
-          <h3>生活中</h3>
-          <p>偶尔会这样哦！</p>
+          <h3>拒绝黑心店</h3>
+          <p>诚信经营</p>
           <div class="line"></div>
         </div>
         <!-- 背景 -->
@@ -180,8 +182,8 @@
       <div class="swiper-slide page4">
         <!-- 简介 -->
         <div class="title">
-          <h3>生活中</h3>
-          <p>偶尔会这样哦！</p>
+          <h3>性价比最高</h3>
+          <p>不信比比看！</p>
           <div class="line"></div>
         </div>
         <!-- 背景 -->
@@ -198,8 +200,9 @@
       <div class="swiper-slide page5">
         <!-- 简介 -->
         <div class="title">
-          <h3>生活中</h3>
-          <p>偶尔会这样哦！</p>
+          <h3>无论前方</h3>
+          <p>下什么东西
+            <br/>我都给你送过去</p>
           <div class="line"></div>
         </div>
         <!-- 背景 -->
@@ -239,8 +242,9 @@
       <div class="swiper-slide page6">
         <!-- 简介 -->
         <div class="title">
-          <h3>生活中</h3>
-          <p>偶尔会这样哦！</p>
+          <h3>丰富的礼物</h3>
+          <p>买什么送什么
+            <br/>就问你怕不怕</p>
           <div class="line"></div>
         </div>
         <!-- 背景 -->
@@ -248,18 +252,42 @@
         <!-- 熊 -->
         <div class="bear">
           <div class="gift-box">
-            <div><div class="gift1"></div></div>
-            <div><div class="gift2"></div></div>
-            <div><div class="gift3"></div></div>
-            <div><div class="gift4"></div></div>
-            <div><div class="gift5"></div></div>
-            <div><div class="gift6"></div></div>
-            <div><div class="gift7"></div></div>
-            <div><div class="gift8"></div></div>
-            <div><div class="gift9"></div></div>
-            <div><div class="gift10"></div></div>
-            <div><div class="gift11"></div></div>
-            <div><div class="gift12"></div></div>
+            <div>
+              <div class="gift1"></div>
+            </div>
+            <div>
+              <div class="gift2"></div>
+            </div>
+            <div>
+              <div class="gift3"></div>
+            </div>
+            <div>
+              <div class="gift4"></div>
+            </div>
+            <div>
+              <div class="gift5"></div>
+            </div>
+            <div>
+              <div class="gift6"></div>
+            </div>
+            <div>
+              <div class="gift7"></div>
+            </div>
+            <div>
+              <div class="gift8"></div>
+            </div>
+            <div>
+              <div class="gift9"></div>
+            </div>
+            <div>
+              <div class="gift10"></div>
+            </div>
+            <div>
+              <div class="gift11"></div>
+            </div>
+            <div>
+              <div class="gift12"></div>
+            </div>
           </div>
         </div>
         <!-- 星球 -->
@@ -270,9 +298,9 @@
       <div class="swiper-slide page7">
         <!-- 简介 -->
         <div class="title">
-          <h3>所有的努力</h3>
-          <p>就是为了健康美味的外面。。。
-            <br>呈现给你。。。</p>
+          <h3>我这么努力</h3>
+          <p>还是败给了你
+            <br>亲给个好评吧。。。</p>
           <div class="line"></div>
         </div>
         <!-- 灯 -->
@@ -286,7 +314,7 @@
         <!-- 摩托 -->
         <div class="moto"></div>
         <!-- 分享 -->
-        <div class="share"></div>
+        <!-- <div class="share"></div> -->
       </div>
     </div>
   </div>
@@ -338,16 +366,19 @@
 
     // 第二页的 按钮的 点击
     $('.welcome .rotate-btn-box').click(function () {
-      $('.bear-box').css('animation', 'none');
-      $('.welcome').fadeOut(1000, function () {
-        // 为 swiper的 第一页 添加 animate class
-        $('.page1').addClass('animate');
+      // 移动熊 
+      $('.bear-box').css('animation', 'top2BottomHide 3s forwards');
+      $('.bear-box').on('animationend', function () {
+        $('.welcome').fadeOut(100, function () {
+          // 为 swiper的 第一页 添加 animate class
+          $('.page1').addClass('animate');
+        });
       });
     });
 
     $('.swiper-slide').eq(2).click(function () {
       var that = this;
-      //无法隐藏的原因
+      //无法隐藏的原因 有默认动画效果
       // $(this).children('.bear').css('opacity',0);
       $(this).children('.bear').css('animation', 'none');
       var index = 0;
@@ -368,8 +399,6 @@
       }, 1000);
 
     });
-
-
 
   });
 </script>

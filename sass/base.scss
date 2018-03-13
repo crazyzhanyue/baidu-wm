@@ -34,6 +34,36 @@ a {
   zoom: 1;
 }
 
+// 为了 一会 使用的时候 有提示 写在 index页面中
+//  计算尺寸函数
+@function p2r($size) {
+  @return ($size/32)*1rem;
+}
+
+// 设置图片居中
+// background center
+// 传入url 图片宽度即可
+@mixin bgc ($url, $width) {
+  background: url($url) no-repeat center /100% 100%;
+  position: absolute;
+  left: 50%; // 这里 使用margin-left来实现 左右居中目的是 为了 后面动画中 我们要使用 transform来改变元素
+  margin-left: p2r(-$width/2);
+}
+
+// 直接设置背景图 不考虑居中
+// 传入 url即可
+@mixin bg($url) {
+  background: url($url) no-repeat center /100% 100%;
+  position: absolute;
+}
+
+// 设置 尺寸
+// 传入 宽度 高度
+@mixin size($width, $height) {
+  width: p2r($width);
+  height: p2r($height);
+}
+
 /**loading页面动画**/
 
 // 进度条100%
@@ -342,8 +372,11 @@ a {
 
 //由上到下消失
 @keyframes top2BottomHide {
+  from {
+    opacity: 1;
+  }
   to {
-    transform: translateY(100%);
+    transform: translateY(100%) scale(1.5, 1.5);
     opacity: 0;
   }
 }
@@ -379,6 +412,7 @@ a {
 }
 
 /**page5页面动画**/
+
 @keyframes snowDown {
   0% {
     opacity: 1;
@@ -406,6 +440,7 @@ a {
 }
 
 /**page6页面动画**/
+
 // 礼物 超四周发散的动画
 @keyframes giftAppear {
   from {
