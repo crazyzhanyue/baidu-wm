@@ -2869,3 +2869,16 @@ div[class*='swiper-slide'].animate .title .line {
 .page7.animate .bear {
   -webkit-animation: top2Bottom .8s .6s forwards;
           animation: top2Bottom .8s .6s forwards; }
+
+.audioControl {
+  position: absolute;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("../img/pause.png") no-repeat center/100% 100%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 4;
+  border: none;
+  outline: none;
+  -webkit-appearance: none; }

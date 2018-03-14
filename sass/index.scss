@@ -1318,3 +1318,16 @@ div[class*='swiper-slide'].animate {
     animation: top2Bottom .8s .6s forwards;
   }
 }
+
+//  播放按钮的样式
+.audioControl {
+  position: absolute;
+  @include size(36, 36);
+  @include bg('../img/pause.png');
+  top: p2r(32);
+  right: p2r(32);
+  z-index: 4; // 边框
+  border: none; // 轮廓线
+  outline: none; // 一些浏览器厂商 可能会为按钮 添加的 一些 独特样式
+  -webkit-appearance: none;
+}

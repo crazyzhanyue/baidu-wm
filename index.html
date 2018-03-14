@@ -25,9 +25,8 @@
 
 <body>
   <span style="display: none">
-     c8aaff7760996b665ff499d2da78e227efa2d5d3
-     <br>
-     "8a425954f46a6caee73808e5b60534b2"
+    c8aaff7760996b665ff499d2da78e227efa2d5d3
+    <br> "8a425954f46a6caee73808e5b60534b2"
   </span>
   <!-- 入场动画 -->
   <div class="loading">
@@ -322,6 +321,11 @@
   </div>
 
 
+  <!-- 音频标签 -->
+  <audio src='music/hlw.mp3' loop></audio>
+  <!-- 播放按钮-->
+  <input type="button" class='audioControl'>
+
 </body>
 <script src="js/jquery.js"></script>
 <script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
@@ -400,6 +404,21 @@
         index++;
       }, 1000);
 
+    });
+
+    // 播放按钮逻辑
+    $('.audioControl').click(function () {
+      // audio.play .pause 都是 dom元素的语法
+      var audio = $('audio')[0];
+
+      if (audio.paused == true) {
+        console.log('暂停中');
+        audio.play();
+        $(this).css('background-image', 'url(img/play.png)');
+      } else {
+        audio.pause();
+        $(this).css('background-image', 'url(img/pause.png)');
+      }
     });
 
   });
